@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Projekt</string>
+    <string name="register_text">Register</string>
+    <string name="login_text">Login</string>
+    <string name="text_already_registered">Already have an account?</string>
+    <string name="text_not_registered">Don\'t have an account?</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_email">Email</string>
+</resources>
