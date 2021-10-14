@@ -1,35 +1,42 @@
 package com.example.projekt
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
-import com.google.firebase.auth.FirebaseAuth
+import android.widget.Toast
+import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var tvUserId: TextView
-    private lateinit var tvEmailId: TextView
-    private lateinit var btnLogout: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        tvUserId = findViewById(R.id.tv_user_id)
-        tvEmailId = findViewById(R.id.tv_email_id)
-        btnLogout = findViewById(R.id.btn_logout)
+        val context = this
+        val db = DatabaseHandler(context)
 
+        val readButton = findViewById<Button>(R.id.btn_read)
+        val insertButton = findViewById<Button>(R.id.btn_insert)
+        val inputName = findViewById<EditText>(R.id.inputName)
+        val inputAge = findViewById<EditText>(R.id.inputAge)
+        val result = findViewById<TextView>(R.id.result)
 
-        val userId = intent.getStringExtra("user_id")
-        val emailId = intent.getStringExtra("email_id")
+        insertButton.setOnClickListener{
+            if (inputName.text.toString().isNotEmpty() && inputAge.text.toString().isNotEmpty()) {
+                val user = User(inputName.text.toString(), inputAge.text.toString().toInt())
+                db.insertData(user)
+            } else {
+                Toast.makeText(context, "Please fill out the forms", Toast.LENGTH_SHORT).show()
+            }
+        }
 
-        tvUserId.text = "User ID :: $userId"
-        tvEmailId.text = "Email ID :: $emailId"
-
-        btnLogout.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            startActivity(Intent(this, LoginActivity::class.java))
-            finish()
+        readButton.setOnClickListener{
+            var data = db.readData()
+            result.text = ""
+            for (i in 0 until data.size) {
+                result.append(data[i].id.toString() + " " + data[i].name + data[i].age + "\n")
+            }
         }
     }
 }

@@ -63,7 +63,7 @@ class LoginActivity : AppCompatActivity() {
 
                                 Toast.makeText(
                                     this@LoginActivity,
-                                    "You were registered successfully.",
+                                    "You were logged in successfully.",
                                     Toast.LENGTH_SHORT
                                 ).show()
 
