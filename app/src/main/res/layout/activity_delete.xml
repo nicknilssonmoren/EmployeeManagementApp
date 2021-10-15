@@ -17,22 +17,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:hint="Name"
+            android:hint="Employee ID"
             android:minHeight="48dp"
             android:padding="10dp" />
 
-        <EditText
-            android:id="@+id/inputAge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:hint="Age"
-            android:inputType="number"
-            android:minHeight="48dp"
-            android:padding="10dp" />
         <Button
-            android:id="@+id/btn_insert"
-            android:text="Register"
+            android:id="@+id/btnDelete"
+            android:text="Delete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
