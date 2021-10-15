@@ -25,5 +25,10 @@ class MenuActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginActivity::class.java))
         }
 
+        btnDelEmp.setOnClickListener {
+            println("I MENU")
+            startActivity(Intent(this, DeleteActivity::class.java))
+        }
+
     }
 }
