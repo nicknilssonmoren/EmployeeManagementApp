@@ -43,8 +43,12 @@ class DeleteActivity : AppCompatActivity() {
         }
 
         btnDelete.setOnClickListener {
-            println("inputID $inputId")
-            db.deleteData(inputId.text.toString().toInt())
+            if (inputId.text.toString().isNotEmpty()) {
+                db.deleteData(inputId.text.toString().toInt())
+                casualRead()
+            } else {
+                Toast.makeText(context, "Fill Employee ID to delete.", Toast.LENGTH_SHORT).show()
+            }
         }
 
     }

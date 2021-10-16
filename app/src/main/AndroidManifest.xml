@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Projekt">
         <activity
+            android:name=".EditEctivity"
+            android:exported="false" />
+        <activity
             android:name=".DeleteActivity"
             android:exported="false" />
         <activity
