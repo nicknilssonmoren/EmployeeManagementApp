@@ -13,6 +13,7 @@ class MenuActivity : AppCompatActivity() {
 
         val btnShowEmp = findViewById<Button>(R.id.btnShowEmp)
         val btnAddEmp = findViewById<Button>(R.id.btnAddEmp)
+        val btnEditEmp = findViewById<Button>(R.id.btnEditEmp)
         val btnDelEmp = findViewById<Button>(R.id.btnDelEmp)
         val btnSignOut = findViewById<Button>(R.id.btnSignOut)
 
@@ -25,8 +26,11 @@ class MenuActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginActivity::class.java))
         }
 
+        btnEditEmp.setOnClickListener {
+            startActivity(Intent(this, EditActivity::class.java))
+        }
+
         btnDelEmp.setOnClickListener {
-            println("I MENU")
             startActivity(Intent(this, DeleteActivity::class.java))
         }
 
