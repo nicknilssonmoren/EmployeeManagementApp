@@ -39,6 +39,7 @@ class EditActivity : AppCompatActivity() {
                 Toast.makeText(context, "You need to enter ID to update.", Toast.LENGTH_SHORT).show()
             }
             if(etEditName.text.toString().isEmpty()){
+                db.updateDataColAge(etEmpIdEdit.text.toString().toInt(), etEditEmail.text.toString().toInt())
                 Toast.makeText(context, "So you want to only update Email?", Toast.LENGTH_SHORT).show()
             }
             if(etEditEmail.text.toString().isEmpty()){
