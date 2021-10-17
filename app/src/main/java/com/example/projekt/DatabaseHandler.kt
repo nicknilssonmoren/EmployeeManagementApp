@@ -75,13 +75,13 @@ class DatabaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE
 
     fun updateDataColName(id:Int, name:String){
         val db = this.readableDatabase
-        db.execSQL("UPDATE $COL_NAME FROM $TABLE_NAME WHERE id=$id")
+        db.execSQL("UPDATE $TABLE_NAME SET $COL_NAME = '$name' WHERE id=$id")
         db.close()
     }
 
     fun updateDataColAge(id:Int, age:Int){
         val db = this.readableDatabase
-        db.execSQL("UPDATE $COL_AGE FROM $TABLE_NAME WHERE id=$id")
+        db.execSQL("UPDATE $TABLE_NAME SET $COL_AGE = $age WHERE id=$id")
         db.close()
     }
 
