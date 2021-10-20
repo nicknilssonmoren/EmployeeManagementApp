@@ -6,4 +6,5 @@
     <string name="text_not_registered">Don\'t have an account?</string>
     <string name="hint_password">Password</string>
     <string name="hint_email">Email</string>
+    <string name="aboutustext">We are a couple of cool catz who like to code. Our team includes: \n Nick, 25, Human \n Leo, 1.5, Cat \n Sotis, 2, Cat \n As a thank you for using our app, below is a random cat image.</string>
 </resources>

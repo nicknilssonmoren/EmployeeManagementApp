@@ -11,11 +11,13 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
-        val btnShowEmp = findViewById<Button>(R.id.btnShowEmp)
         val btnAddEmp = findViewById<Button>(R.id.btnAddEmp)
         val btnEditEmp = findViewById<Button>(R.id.btnEditEmp)
         val btnDelEmp = findViewById<Button>(R.id.btnDelEmp)
         val btnSignOut = findViewById<Button>(R.id.btnSignOut)
+        val btnAbout = findViewById<Button>(R.id.btnAbout)
+
+
 
         btnAddEmp.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
@@ -32,6 +34,10 @@ class MenuActivity : AppCompatActivity() {
 
         btnDelEmp.setOnClickListener {
             startActivity(Intent(this, DeleteActivity::class.java))
+        }
+
+        btnAbout.setOnClickListener {
+            startActivity(Intent(this, AboutUsActivity::class.java))
         }
 
     }
