@@ -12,6 +12,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
 
 class AboutUsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +20,7 @@ class AboutUsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_aboutus)
 
         val btnBackToMenu = findViewById<Button>(R.id.btnBackToMenu)
-        val results = findViewById<TextView>(R.id.textView2)
+        //val results = findViewById<TextView>(R.id.textView2)
         val catImage = findViewById<ImageView>(R.id.imgCat)
 
         val retrofit = Retrofit.Builder()
@@ -34,11 +35,6 @@ class AboutUsActivity : AppCompatActivity() {
             override fun onResponse(call: Call<Cat>, response: Response<Cat>) {
                 if (response.isSuccessful) {
                     val cat = response.body()!!
-
-                    //val stringBuilder= "Cat: \n url ${cat.myUrl}"
-
-                    //results.text = stringBuilder
-
                     Glide.with(this@AboutUsActivity)
                         .load(cat.myUrl)
                         .into(catImage)
@@ -46,7 +42,7 @@ class AboutUsActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<Cat>, t: Throwable) {
-                TODO("Not yet implemented")
+                println("Something went terribly wrong here.")
             }
         })
 

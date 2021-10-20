@@ -40,14 +40,14 @@ class EditActivity : AppCompatActivity() {
             }
             if(etEditName.text.toString().isEmpty()){
                 db.updateDataColAge(etEmpIdEdit.text.toString().toInt(), etEditEmail.text.toString().toInt())
-                Toast.makeText(context, "So you want to only update Email?", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "The email of ID: ${etEmpIdEdit.text} has been updated.", Toast.LENGTH_SHORT).show()
             }
             if(etEditEmail.text.toString().isEmpty()){
                 db.updateDataColName(etEmpIdEdit.text.toString().toInt(), etEditName.text.toString())
-                Toast.makeText(context, "So you want to only update Name?", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "The name of ID: ${etEmpIdEdit.text} has been updated.", Toast.LENGTH_SHORT).show()
             }
             if (etEditEmail.text.toString().isEmpty() && etEditName.text.toString().isEmpty()) {
-                Toast.makeText(context, "Please fill out what the fuck you want to update.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Please fill out what you want to update.", Toast.LENGTH_SHORT).show()
             }
         }
 

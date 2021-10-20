@@ -10,8 +10,8 @@ class Cat {
     @SerializedName("webpurl")
     var myWebpurl: String = ""
     @SerializedName("x")
-    var myX: Int = 0
+    var myX: Double = 0.0
     @SerializedName("y")
-    var MyY: Int = 0
+    var MyY: Double = 0.0
 
 }
