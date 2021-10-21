@@ -3,9 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Precision T7810/AndroidStudioProjects/Projekt/app/src/main/res/layout/activity_aboutus.xml" value="0.1" />
         <entry key="..\:/Users/Precision T7810/AndroidStudioProjects/Projekt/app/src/main/res/layout/activity_administrators.xml" value="0.19947916666666668" />
         <entry key="..\:/Users/Precision T7810/AndroidStudioProjects/Projekt/app/src/main/res/layout/activity_delete.xml" value="0.29270833333333335" />
-        <entry key="..\:/Users/Precision T7810/AndroidStudioProjects/Projekt/app/src/main/res/layout/activity_edit_activity.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Precision T7810/AndroidStudioProjects/Projekt/app/src/main/res/layout/activity_edit_activity.xml" value="0.1" />
         <entry key="..\:/Users/Precision T7810/AndroidStudioProjects/Projekt/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Precision T7810/AndroidStudioProjects/Projekt/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/Precision T7810/AndroidStudioProjects/Projekt/app/src/main/res/layout/activity_menu.xml" value="0.28532608695652173" />

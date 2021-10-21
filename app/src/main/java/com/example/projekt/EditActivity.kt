@@ -32,6 +32,7 @@ class EditActivity : AppCompatActivity() {
                 result.append(data[i].id.toString() + " " + data[i].name + " " + data[i].age + "\n")
             }
         }
+        casualRead()
 
         btnUpdate.setOnClickListener{
             casualRead()
@@ -40,11 +41,13 @@ class EditActivity : AppCompatActivity() {
             }
             if(etEditName.text.toString().isEmpty()){
                 db.updateDataColAge(etEmpIdEdit.text.toString().toInt(), etEditEmail.text.toString().toInt())
-                Toast.makeText(context, "The email of ID: ${etEmpIdEdit.text} has been updated.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "The salary of ID: ${etEmpIdEdit.text} has been updated.", Toast.LENGTH_SHORT).show()
+                casualRead()
             }
             if(etEditEmail.text.toString().isEmpty()){
                 db.updateDataColName(etEmpIdEdit.text.toString().toInt(), etEditName.text.toString())
                 Toast.makeText(context, "The name of ID: ${etEmpIdEdit.text} has been updated.", Toast.LENGTH_SHORT).show()
+                casualRead()
             }
             if (etEditEmail.text.toString().isEmpty() && etEditName.text.toString().isEmpty()) {
                 Toast.makeText(context, "Please fill out what you want to update.", Toast.LENGTH_SHORT).show()
@@ -52,11 +55,7 @@ class EditActivity : AppCompatActivity() {
         }
 
         readButton.setOnClickListener{
-            var data = db.readData()
-            result.text = ""
-            for (i in 0 until data.size) {
-                result.append(data[i].id.toString() + " " + data[i].name + " " + data[i].age + "\n")
-            }
+            casualRead()
         }
 
         btnMenu.setOnClickListener {

@@ -7,7 +7,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +30,7 @@ class MainActivity : AppCompatActivity() {
                 result.append(data[i].id.toString() + " " + data[i].name + " " + data[i].age + "\n")
             }
         }
+        casualRead();
 
         insertButton.setOnClickListener{
             if (inputName.text.toString().isNotEmpty() && inputAge.text.toString().isNotEmpty()) {
@@ -43,11 +43,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         readButton.setOnClickListener{
-            var data = db.readData()
-            result.text = ""
-            for (i in 0 until data.size) {
-                result.append(data[i].id.toString() + " " + data[i].name + " " + data[i].age + "\n")
-            }
+            casualRead()
         }
 
         btnMenu.setOnClickListener {

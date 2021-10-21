@@ -30,12 +30,10 @@ class DeleteActivity : AppCompatActivity() {
             }
         }
 
+        casualRead()
+
         readButton.setOnClickListener{
-            var data = db.readData()
-            result.text = ""
-            for (i in 0 until data.size) {
-                result.append(data[i].id.toString() + " " + data[i].name + " " + data[i].age + "\n")
-            }
+            casualRead()
         }
 
         btnMenu.setOnClickListener {
